@@ -9,8 +9,6 @@ window.updateList = [
 
     'downloadExtension.html',
     'main.js',
-    'package.json',
-    //'package-lock.json',
     'update.html',
     'app.html',
 
@@ -122,7 +120,11 @@ window.updateList = [
     "typings/type.d.ts",
     "typings/ui.d.ts",
     "typings/windowEx.d.ts",
-    "typings/ws.d.ts"
+    "typings/ws.d.ts",
+	
+	//放置最后更新 防止中断被误认更新完毕
+	//'package-lock.json',
+	'package.json'
 ];
 
 window.removeFileList = [

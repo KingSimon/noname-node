@@ -25,7 +25,7 @@ const contents = thisWindow.webContents;
 const fs = require('fs');
 const https = require('https');
 //const checkUrl = 'https://raw.fastgit.org/nonameShijian/noname/main';
-const checkUrl = 'https://raw.fastgit.org/kingsimon/noname-node/main';
+const checkUrl = 'https://ghproxy.net/https://raw.githubusercontent.com/kingsimon/noname-node/main';
 
 const readLocalJSON = (url) => {
     return new Promise((resolve, reject) => {
