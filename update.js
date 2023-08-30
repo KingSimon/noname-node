@@ -15,7 +15,7 @@ window.updateList = [
     'app.html',
 
     //教程
-    'doc/(必看)无名杀全教程10.0.pdf',
+    //'doc/(必看)无名杀全教程10.0.pdf',
 
 	//搬运自用
     'extension/搬运自用/extension.js',
