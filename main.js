@@ -397,11 +397,11 @@ app.on('window-all-closed', () => {
     }
 });
 
-// downloadURL https 会忽略ssl
+// https 会忽略ssl
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 // downloadURL XMLHttpRequest 会忽略ssl
-//app.commandLine.appendSwitch('ignore-certificate-errors', 'true');
+app.commandLine.appendSwitch('ignore-certificate-errors', 'true');
 
 // XMLHttpRequest 会忽略ssl
 app.on('certificate-error', (event, webContents, url, error, certificate, callback) => {

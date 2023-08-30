@@ -5,7 +5,7 @@ window.updateList = [
     'app/redirect.js',
     'app/color.css',
     'app/index.css',
-    'app/xinwei.ttf',
+    //'app/xinwei.ttf',
 
     'downloadExtension.html',
     'main.js',
