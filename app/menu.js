@@ -29,7 +29,6 @@ const checkUrl = 'https://raw.fastgit.org/kingsimon/noname-node/main';
 
 const readLocalJSON = (url) => {
     return new Promise((resolve, reject) => {
-
         fetch(url).then(response => {
             if (response.status != 200) {
                 console.error(`未找到文件：${url}`);
@@ -65,17 +64,17 @@ const readJSON = (url) => {
     });
 };
 
-let LocalInstallerVersion = 1.0;
+let LocalInstallerVersion = '1.0';
 
 async function checkLocalrVersion() {
-    const localJSON = await readLocalJSON('./package.json');
+    const localJSON = await readLocalJSON(__dirname + '/../package.json');
     //本地安装程序版本
     LocalInstallerVersion = localJSON.installerVersion || LocalInstallerVersion;
 }
 checkLocalrVersion();
 async function checkForUpdate(url) {
     //本地json数据
-    const localJSON = await readLocalJSON('./package.json');
+   const localJSON = await readLocalJSON(__dirname + '/../package.json');
     //本地安装程序版本
     const localInstallerVersion = localJSON.installerVersion || "";
     //服务器json数据
@@ -490,7 +489,15 @@ var Menus = [{
     }, {
         label: '反馈',
         submenu: [{
-                label: `本应用(v${LocalInstallerVersion})优化： KingSimon`,
+                label: '本应用优化： KingSimon',
+				    click: () => {
+                    dialog.showMessageBoxSync(thisWindow, {
+                        message: `版本号:v${LocalInstallerVersion}`,
+                        type: 'info',
+                        title: '关于本应用',
+                        icon: path.join(__dirname, '..', 'noname.ico'),
+                    });
+                },
             }, {
                 label: '通过QQ联系本应用作者（诗笺）',
                 click: () => {
