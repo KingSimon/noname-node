@@ -102,7 +102,7 @@
     });
 
     ipcRenderer.on('update-progress', (event, progress) => {
-      span.innerText = `${files[now]} ${(progress * 100).toFixed(2)}%`;
+      span.innerText = `${files[now]} ${(progress * 100).toFixed(2) || 0}%`;
     });
 
     ipcRenderer.on('update-done', (event, state) => {
