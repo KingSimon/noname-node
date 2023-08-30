@@ -65,6 +65,14 @@ const readJSON = (url) => {
     });
 };
 
+let LocalInstallerVersion = 1.0;
+
+async function checkLocalrVersion() {
+    const localJSON = await readLocalJSON('./package.json');
+    //本地安装程序版本
+    LocalInstallerVersion = localJSON.installerVersion || LocalInstallerVersion;
+}
+checkLocalrVersion();
 async function checkForUpdate(url) {
     //本地json数据
     const localJSON = await readLocalJSON('./package.json');
@@ -422,7 +430,7 @@ var Menus = [{
                 click: () => {
                     var workPath = localStorage.getItem('noname_workpath');
                     localStorage.removeItem('noname_inited');
-                    thisWindow.loadURL('file:///' + __dirname + '/../'  + 'app.html');
+                    thisWindow.loadURL('file:///' + __dirname + '/../' + 'app.html');
                 },
             }, {
                 label: '打开/关闭控制台',
@@ -482,7 +490,7 @@ var Menus = [{
     }, {
         label: '反馈',
         submenu: [{
-                label: '本应用优化： KingSimon',
+                label: `本应用(v${LocalInstallerVersion})优化： KingSimon`,
             }, {
                 label: '通过QQ联系本应用作者（诗笺）',
                 click: () => {
