@@ -10,7 +10,7 @@ game.import("extension", function (lib, game, ui, get, ai, _status) {
     //更新源配置
     var defaultLatest = 'https://github.com/libccy/noname/releases/latest';
     var github_site = 'libccy/noname';
-    var extension_site = 'libccy/noname-extension/master/';
+    var extension_site = 'KingSimon/noname-extension/master/';
     var github_latest = 'libccy/noname/releases/latest';
     var githubConf = [{
             key: 'ghproxy.net',
@@ -112,7 +112,7 @@ game.import("extension", function (lib, game, ui, get, ai, _status) {
             //   url: 'https://kuangthree.coding.net/p/nonamexwjh/d/nonamexwjh/git/raw'
         },
     ];
-    var extensionConf = [{
+    var mirrorExtConf = [{
             key: 'gitHub',
             name: 'GitHub',
             desc: 'Github 原生',
@@ -136,7 +136,7 @@ game.import("extension", function (lib, game, ui, get, ai, _status) {
     };
 
     var initExtensionConf = function () {
-        return initGithubConf(extension_site, github_latest).concat(extensionConf.slice(0));
+        return initGithubConf(extension_site, github_latest).concat(mirrorExtConf.slice(0));
     }
 
     var srcConf = initSrcConf();
